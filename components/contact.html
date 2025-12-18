@@ -1,0 +1,83 @@
+ <section id="contact" class="section-padding bg-dark">
+        <div class="container contact-container">
+            <h2 class="section-title text-white fade-in">Contact Us</h2>
+            <div class="contact-wrapper">
+    <!-- Contact Info -->
+    <div class="contact-info-box fade-in">
+        <h3>Get In Touch</h3>
+        <p class="info-text">Have a question or need a quote? We're here to help!</p>
+        
+        <div class="info-item">
+            <span class="icon">👤</span>
+            <div>
+                <strong>Proprietor</strong>
+                <p>Sumeet Shah</p>
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <span class="icon">📧</span>
+            <div>
+                <strong>Email</strong>
+                <p><a href="mailto:sumeet.shah91@gmail.com">sumeet.shah91@gmail.com</a></p>
+            </div>
+        </div>
+        
+        <div class="info-item">
+            <span class="icon">📍</span>
+            <div>
+                <strong>Location</strong>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-box fade-in">
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            
+            <div class="form-group">
+                <label for="product">Product Interest</label>
+                <select id="product" name="product">
+                    <option value="">Select a product</option>
+                    <option value="mild-steel">Mild Steel (MS)</option>
+                    <option value="die-tool-steel">Die & Tool Steel</option>
+                    <option value="case-hardening">Case Hardening Alloy</option>
+                    <option value="alloy-steels">Alloy Steels</option>
+                    <option value="carbon-steel">Carbon Steel</option>
+                    <option value="plates-boiler">Plates & Boiler Quality</option>
+                    <option value="non-metals">Non-Metals</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none;">Sending...</span>
+            </button>
+            
+            <div class="form-message" id="formMessage"></div>
+        </form>
+    </div>
+</div>
+        </div>
+    </section>

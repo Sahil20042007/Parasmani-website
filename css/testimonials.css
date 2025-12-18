@@ -1,0 +1,264 @@
+/* =========================================
+   RESET & BASICS
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Use your website font */
+    background-color: #000;
+    color: #fff;
+}
+
+/* =========================================
+   TESTIMONIAL SECTION
+   ========================================= */
+.testimonial-section {
+    position: relative;
+    background-color: #050505; /* Deep Black */
+    border-top: 1px solid #1e293b;
+    width: 100%;
+    overflow: hidden; /* Prevents horizontal scroll */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.split-layout {
+    display: flex;
+    flex-direction: row; /* Side by side on desktop */
+}
+
+/* =========================================
+   LEFT COLUMN (PINNED IDENTITY)
+   ========================================= */
+.left-col {
+    width: 50%;
+    height: 100vh; /* Must be full height to pin correctly */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    border-right: 1px solid #1e293b;
+    background-color: #050505;
+    z-index: 2; /* Sits above background elements */
+}
+
+/* Header Styling */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2dd4bf; /* Teal color */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    font-family: monospace;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2dd4bf;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7);
+    animation: pulse 2s infinite;
+}
+
+.section-header h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #2dd4bf, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Identity Stack (Where cards overlap) */
+.identity-stack {
+    position: relative;
+    height: 300px; /* Space for the content to change */
+}
+
+.identity-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: none; /* Handled by GSAP */
+    pointer-events: none; /* Prevent clicking hidden cards */
+}
+
+.identity-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.big-number {
+    font-size: 8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05); /* Subtle background number */
+    font-family: monospace;
+    position: absolute;
+    top: -60px;
+    left: -20px;
+    z-index: -1;
+}
+
+.stars {
+    color: #2dd4bf;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.client-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.client-role {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.client-company {
+    margin-top: 4px;
+    padding-left: 24px; /* Align with text above */
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   RIGHT COLUMN (SCROLLING QUOTES)
+   ========================================= */
+.right-col {
+    width: 50%;
+    position: relative;
+    padding-top: 20vh; /* Start lower down */
+    padding-bottom: 20vh;
+}
+
+/* Subtle Grid Background for Right Side */
+.right-col::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+    background-size: 100% 80px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.quote-block {
+    min-height: 80vh; /* Each quote takes up almost a full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: opacity 0.5s ease, filter 0.5s ease;
+    opacity: 0.3; /* Dim by default */
+    filter: blur(2px);
+}
+
+.quote-block.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: #2dd4bf;
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.quote-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+    font-weight: 300;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+}
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 992px) {
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .left-col {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #1e293b;
+        position: relative; /* Unpin on mobile */
+        padding: 40px 20px;
+    }
+
+    .identity-stack {
+        height: auto; /* Allow auto height */
+    }
+    
+    .identity-card {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        margin-bottom: 30px;
+        display: none; /* Hide non-active ones via JS or simple CSS if needed */
+    }
+    
+    .identity-card.active {
+        display: block;
+    }
+
+    .right-col {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .quote-block {
+        min-height: auto;
+        padding: 40px 20px;
+        margin-bottom: 40px;
+        opacity: 1; /* Always visible on mobile */
+        filter: none;
+    }
+    
+    .quote-text {
+        font-size: 1.2rem;
+    }
+}

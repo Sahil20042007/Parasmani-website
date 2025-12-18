@@ -1,0 +1,36 @@
+ /* Contact Section */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info p {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info strong {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info a:not(.btn-primary) {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:not(.btn-primary):hover {
+            color: #fbbf24;
+        }

@@ -1,0 +1,69 @@
+/* =========================================
+   INTRO SCREEN STYLES
+   ========================================= */
+
+/* The Full Screen Overlay */
+.intro-overlay {
+    position: fixed;
+    inset: 0; /* Top, Right, Bottom, Left: 0 */
+    z-index: 9999; /* Always on top */
+    /* Dark Premium Gradient Background */
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Pulse Circles */
+.intro-circle {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle metallic ring */
+    border-radius: 50%;
+    opacity: 0; /* Hidden initially, controlled by GSAP */
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center perfectly */
+}
+
+/* Content Wrapper */
+.intro-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+/* The Logo Box */
+.logo-box {
+    width: 120px;
+    height: 120px;
+    /* Metallic Gradient for the box */
+    background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(148, 163, 184, 0.3); /* Silver glow */
+    opacity: 0; /* Start hidden */
+}
+
+.logo-text {
+    font-family: sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0f172a; /* Dark text on silver box */
+}
+
+/* The Brand Text */
+.brand-name {
+    margin-top: 24px;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0; /* Start hidden */
+}

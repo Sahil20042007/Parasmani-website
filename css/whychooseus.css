@@ -1,0 +1,296 @@
+* Why Choose Us Section */
+/* Why Choose Us - Diagonal Grid */
+.diagonal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0;
+    margin-top: 50px;
+    position: relative;
+}
+
+.diagonal-item {
+    padding: 50px 35px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInUp 0.6s ease calc(var(--delay)) both;
+    cursor: pointer;
+}
+
+.diagonal-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(26, 86, 219, 0.03) 0%, 
+        rgba(30, 66, 159, 0.08) 100%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.diagonal-item:nth-child(even)::before {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.diagonal-item:hover::before {
+    background: var(--gradient);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.diagonal-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(26, 86, 219, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.diagonal-item:hover::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.diagonal-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+    display: inline-block;
+}
+
+.diagonal-item:hover .diagonal-icon {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+.diagonal-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.diagonal-item:hover h3 {
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.diagonal-item p {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.diagonal-item:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .diagonal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .diagonal-item {
+        padding: 40px 25px;
+    }
+    
+    .diagonal-icon {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .diagonal-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Industries We Serve Section */
+/* Industries - Honeycomb Hexagon Design */
+.honeycomb-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.hexagon-item {
+    width: 180px;
+    margin: 10px;
+}
+
+.hexagon {
+    width: 180px;
+    height: 208px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hexagon-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: rotate(30deg);
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.hexagon-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    transform: rotate(-60deg);
+    transform-origin: center;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    opacity: 0.9;
+}
+
+.hex-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    text-align: center;
+    width: 140px;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.hex-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    transition: all 0.5s ease;
+    display: inline-block;
+}
+
+.hex-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.hexagon:hover .hexagon-inner::before {
+    transform: rotate(-60deg) scale(1.1);
+    opacity: 1;
+}
+
+.hexagon:hover .hex-icon {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+.hexagon:hover .hex-content h4 {
+    transform: scale(1.05);
+}
+
+/* Alternate colors for variety */
+.hexagon-item:nth-child(2) .hexagon-inner::before,
+.hexagon-item:nth-child(5) .hexagon-inner::before,
+.hexagon-item:nth-child(8) .hexagon-inner::before,
+.hexagon-item:nth-child(11) .hexagon-inner::before {
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+}
+
+.hexagon-item:nth-child(3) .hexagon-inner::before,
+.hexagon-item:nth-child(6) .hexagon-inner::before,
+.hexagon-item:nth-child(9) .hexagon-inner::before,
+.hexagon-item:nth-child(12) .hexagon-inner::before {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Responsive Honeycomb */
+@media (max-width: 968px) {
+    .hexagon-item {
+        width: 160px;
+    }
+    
+    .hexagon {
+        width: 160px;
+        height: 185px;
+    }
+    
+    .hex-content {
+        width: 120px;
+    }
+    
+    .hex-icon {
+        font-size: 40px;
+    }
+    
+    .hex-content h4 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hexagon-item {
+        width: 140px;
+        margin: 8px;
+    }
+    
+    .hexagon {
+        width: 140px;
+        height: 162px;
+    }
+    
+    .hex-content {
+        width: 100px;
+    }
+    
+    .hex-icon {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .hex-content h4 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hexagon-item {
+        width: 120px;
+        margin: 6px;
+    }
+    
+    .hexagon {
+        width: 120px;
+        height: 139px;
+    }
+    
+    .hex-content {
+        width: 90px;
+    }
+    
+    .hex-icon {
+        font-size: 32px;
+    }
+    
+    .hex-content h4 {
+        font-size: 13px;
+    }
+}

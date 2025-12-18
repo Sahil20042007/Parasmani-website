@@ -1,0 +1,257 @@
+/* =========================================
+   FOOTER STYLES
+   ========================================= */
+
+/* Main Wrapper */
+.modern-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 24px 24px 24px;
+    font-family: sans-serif; /* Replace with your specific font family */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Top Section (Grid) --- */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+/* Left Branding Side */
+.brand-intro h3 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.brand-intro p {
+    color: #9ca3af; /* Gray text */
+    font-size: 1.125rem;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* Newsletter Form */
+.footer-newsletter {
+    margin-top: 48px;
+    max-width: 400px;
+}
+
+.label-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.newsletter-form {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 16px 0;
+    font-size: 1.25rem;
+    color: #fff;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #4b5563;
+}
+
+.newsletter-form button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    opacity: 1;
+}
+
+/* Contact Info */
+.footer-contact-info {
+    margin-top: 48px;
+}
+
+.contact-email {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.contact-email:hover {
+    color: #d1d5db;
+}
+
+.contact-name {
+    color: #6b7280;
+}
+
+/* --- Navigation Section (Right Side) --- */
+.footer-nav-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.nav-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-column li {
+    margin-bottom: 12px;
+}
+
+.nav-column a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-column a:hover {
+    color: #9ca3af;
+}
+
+.nav-column .arrow {
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-column a:hover .arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* --- Industries (Middle) --- */
+.footer-industries {
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #4b5563;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.industry-label {
+    color: #9ca3af;
+}
+
+.industry-item {
+    cursor: default;
+    transition: color 0.2s;
+}
+
+.industry-item:hover {
+    color: #fff;
+}
+
+/* --- Bottom Section (Big Text) --- */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.copyright-section {
+    display: flex;
+    gap: 24px;
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #9ca3af;
+}
+
+.legal-links a {
+    color: #6b7280;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.legal-links a:hover {
+    color: #fff;
+}
+
+/* MASSIVE TEXT STYLING */
+.big-brand-text {
+    font-size: 13vw; /* Responsive huge size */
+    line-height: 0.8;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.04em;
+    user-select: none;
+    width: 100%;
+    text-align: center; /* Or left, depending on preference */
+}
+
+.big-brand-text .text-gray {
+    color: #333; /* Darker gray part of the logo */
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 40px;
+    }
+    
+    .footer-nav-section {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .brand-intro h3 {
+        font-size: 2.5rem;
+    }
+    
+    .copyright-section {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+}
