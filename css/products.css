@@ -1,150 +1,195 @@
-/* =========================================
-   PRODUCTS SECTION (CSS Only Stacking)
-   ========================================= */
+/* ========================================= */
+/* PRODUCTS SECTION - STACKING MECHANISM     */
+/* ========================================= */
 
 .products-section {
-    padding: 100px 20px;
-    background-color: #000000;
+    background-color: #050505; /* Deep Black */
     color: #ffffff;
+    padding: 100px 20px;
     position: relative;
+    /* Ensure no overflow hidden here, or sticky breaks */
+    overflow: visible; 
 }
 
-/* --- Header --- */
-.section-header {
+/* 1. HEADER STYLES */
+.products-header {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 80px auto;
 }
 
-.section-badge {
+.products-header .badge {
     display: inline-block;
     padding: 8px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50px;
     font-size: 0.85rem;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: #94a3b8;
     margin-bottom: 24px;
-    text-transform: uppercase;
 }
 
-.section-title {
+.products-header h2 {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 24px;
-    background: linear-gradient(to right, #ffffff, #94a3b8);
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #94a3b8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.section-description {
+.products-header p {
     font-size: 1.25rem;
     color: #94a3b8;
     line-height: 1.6;
 }
 
-/* --- Stacking Logic (The Magic Part) --- */
-.products-sticky-container {
-    max-width: 1100px;
+/* 2. THE STACKING CONTAINER */
+.stacking-container {
+    max-width: 1000px;
     margin: 0 auto;
-    padding-bottom: 10vh; /* Space at bottom */
+    /* This padding allows the last card to scroll up nicely */
+    padding-bottom: 100px; 
 }
 
-.product-card {
-    /* KEY CHANGE: Sticky makes them stack without JS */
+/* 3. THE CARD (The Sticky Magic) */
+.stack-card {
+    /* STICKY POSITIONING: This is what stacks them */
     position: sticky;
-    top: 15vh; /* Distance from top where card "sticks" */
     
-    background: #0f172a;
+    /* Dynamic Top Calculation: 
+       base (100px) + (index * 20px) offset 
+       This ensures they stack like a deck, not exactly on top of each other */
+    top: calc(10vh + (var(--index) * 20px));
+    
+    /* Margin Bottom creates space to scroll before the next card hits */
+    margin-bottom: 5vh;
+    
+    /* Visual Styles */
+    height: auto;
+    min-height: 500px;
+    z-index: var(--index); /* Ensure lower cards are on top */
+}
+
+.card-body {
+    background-color: #0f172a; /* Dark Blue-Grey */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
-    padding: 60px;
+    padding: 50px;
     display: flex;
-    gap: 60px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    gap: 40px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5); /* Shadow goes UP to separate cards */
     
-    /* Ensure cards have a background to cover the one below */
-    background: #0f172a; 
-    
-    /* Add margin so they have space to scroll */
-    margin-bottom: 5vh; 
-    
-    /* Minimum height to fit content */
-    min-height: 60vh;
+    /* Clean transition if you want to add hover effects later */
+    transition: transform 0.3s ease;
 }
 
-/* Slightly offset each card top so they create a "deck" effect */
-.product-card:nth-child(1) { top: 15vh; }
-.product-card:nth-child(2) { top: 17vh; }
-.product-card:nth-child(3) { top: 19vh; }
-.product-card:nth-child(4) { top: 21vh; }
-.product-card:nth-child(5) { top: 23vh; }
-.product-card:nth-child(6) { top: 25vh; }
+/* 4. CARD CONTENT LAYOUT */
+.card-content {
+    flex: 1;
+}
 
-/* Visuals & Content Styling (Same as before) */
-.product-content { flex: 1; z-index: 2; }
-.product-visual {
+.card-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    font-family: monospace;
+    line-height: 1;
+    margin-bottom: -10px;
+}
+
+.card-category {
+    color: #38bdf8; /* Light Blue */
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stack-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.stack-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Specs Grid */
+.card-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spec .label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.spec .value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Tags */
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Visual Right Side */
+.card-visual {
     flex: 0.8;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.product-icon { font-size: 8rem; }
-.product-number {
-    font-size: 4rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.05);
-    margin-bottom: -20px;
-    font-family: monospace;
-}
-.product-category {
-    color: #38bdf8;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 12px;
-}
-.product-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; color: #fff; }
-.product-description { color: #cbd5e1; line-height: 1.6; margin-bottom: 30px; font-size: 1.1rem; }
-
-/* Specs Grid */
-.product-specs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.spec-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 6px; }
-.spec-value { font-size: 1rem; font-weight: 500; color: #fff; }
-
-/* Grade Pills */
-.grade-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-.grade-pill {
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    font-size: 0.85rem;
-    color: #94a3b8;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 6rem; /* Emoji size */
 }
 
-/* Mobile Responsive */
+/* 5. RESPONSIVE (MOBILE) */
 @media (max-width: 992px) {
-    .product-card {
-        flex-direction: column-reverse;
-        padding: 30px;
-        gap: 30px;
-        top: 10vh !important; /* Force simpler stacking on mobile */
+    .products-header h2 { font-size: 2.5rem; }
+    
+    .stack-card {
+        top: calc(10vh + (var(--index) * 10px)); /* Tighter stacking on mobile */
+        min-height: auto;
     }
-    .product-visual { height: 150px; flex: none; }
-    .product-icon { font-size: 4rem; }
-    .product-specs { grid-template-columns: 1fr 1fr; }
-    .section-title { font-size: 2.5rem; }
+    
+    .card-body {
+        flex-direction: column-reverse; /* Image on top */
+        padding: 30px;
+        gap: 20px;
+    }
+    
+    .card-visual {
+        height: 150px;
+        flex: none;
+    }
 }

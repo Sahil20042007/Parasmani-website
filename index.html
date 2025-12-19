@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/industries.css">
 </head>
 
 <body>
@@ -162,424 +163,266 @@ We don't just supply steel; we build solid partnerships and contribute to respon
         
         <!-- Products Section (Load from component) -->
         <!-- Products Section with Stacking Cards -->
-<section class="products-section" id="products">
-    <!-- Header -->
-    <div class="section-header">
-        <div class="section-badge">⚙️ OUR PRODUCT RANGE</div>
-        <h2 class="section-title">Premium Steel Solutions</h2>
-        <p class="section-description">
-            From mild steel to specialized alloys, we deliver quality materials that power industries across India
-        </p>
+
+    
+    <div class="products-header">
+        <div class="badge">Our Range of Products</div>
+        <h2>Premium Steel Solutions</h2>
+        <p>From mild steel to specialized alloys, we deliver quality materials that power industries across India.</p>
     </div>
 
-    <!-- Sticky Container with Stacking Cards -->
-    <div class="products-sticky-container">
-        <div class="stack-wrapper">
+    <div class="stacking-container">
+
+        <div class="stack-card" style="--index: 1;">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="card-number">01</div>
+                    <span class="card-category">Structural Steel</span>
+                    <h3>Mild Steel (MS)</h3>
+                    <p>High-quality mild steel perfect for construction, fabrication, and general engineering. Known for excellent weldability.</p>
+                    
+                    <div class="card-specs">
+                        <div class="spec">
+                            <span class="label">Carbon</span>
+                            <span class="value">0.15-0.25%</span>
+                        </div>
+                        <div class="spec">
+                            <span class="label">Finish</span>
+                            <span class="value">Hot/Cold Rolled</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span>IS 2062</span>
+                        <span>ASTM A36</span>
+                    </div>
+                </div>
+                <div class="card-visual">🏗️</div>
+            </div>
+        </div>
+
+        <div class="stack-card" style="--index: 2;">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="card-number">02</div>
+                    <span class="card-category">Precision Engineering</span>
+                    <h3>Die & Tool Steel</h3>
+                    <p>Exceptional hardness and wear resistance for precision tooling. Designed for high-stress industrial applications.</p>
+                    
+                    <div class="card-specs">
+                        <div class="spec">
+                            <span class="label">Hardness</span>
+                            <span class="value">58-65 HRC</span>
+                        </div>
+                        <div class="spec">
+                            <span class="label">Temp</span>
+                            <span class="value">Up to 600°C</span>
+                        </div>
+                    </div>
+
+                    <div class="card-tags">
+                        <span>D2</span>
+                        <span>H13</span>
+                        <span>H11</span>
+                    </div>
+                </div>
+                <div class="card-visual">🔧</div>
+            </div>
+        </div>
+
+        <div class="stack-card" style="--index: 3;">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="card-number">03</div>
+                    <span class="card-category">Surface Treatment</span>
+                    <h3>Case Hardening Alloy</h3>
+                    <p>Specialized alloys for carburizing. Features a hard, wear-resistant surface with a tough, ductile core.</p>
+                    
+                    <div class="card-specs">
+                        <div class="spec">
+                            <span class="label">Core Hardness</span>
+                            <span class="value">30-40 HRC</span>
+                        </div>
+                        <div class="spec">
+                            <span class="label">Case Depth</span>
+                            <span class="value">0.5-2.0mm</span>
+                        </div>
+                    </div>
+
+                    <div class="card-tags">
+                        <span>EN353</span>
+                        <span>SAE8620</span>
+                    </div>
+                </div>
+                <div class="card-visual">⚙️</div>
+            </div>
+        </div>
+
+        <div class="stack-card" style="--index: 4;">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="card-number">04</div>
+                    <span class="card-category">High Performance</span>
+                    <h3>Alloy Steels</h3>
+                    <p>Premium alloys with superior mechanical properties like strength, toughness, and fatigue resistance.</p>
+                    
+                    <div class="card-specs">
+                        <div class="spec">
+                            <span class="label">Tensile</span>
+                            <span class="value">850-1200 MPa</span>
+                        </div>
+                        <div class="spec">
+                            <span class="label">Alloying</span>
+                            <span class="value">Cr, Ni, Mo</span>
+                        </div>
+                    </div>
+
+                    <div class="card-tags">
+                        <span>EN19</span>
+                        <span>EN24</span>
+                        <span>42CrMo4</span>
+                    </div>
+                </div>
+                <div class="card-visual">🚗</div>
+            </div>
+        </div>
+
+        <div class="stack-card" style="--index: 5;">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="card-number">05</div>
+                    <span class="card-category">General Purpose</span>
+                    <h3>Carbon Steel</h3>
+                    <p>Versatile grades available in low, medium, and high carbon variants to suit specific machinery requirements.</p>
+                    
+                    <div class="card-specs">
+                        <div class="spec">
+                            <span class="label">Carbon</span>
+                            <span class="value">0.05-1.5%</span>
+                        </div>
+                        <div class="spec">
+                            <span class="label">Forms</span>
+                            <span class="value">Round, Hex, Flat</span>
+                        </div>
+                    </div>
+
+                    <div class="card-tags">
+                        <span>EN8</span>
+                        <span>EN9</span>
+                        <span>C45</span>
+                    </div>
+                </div>
+                <div class="card-visual">⛓️</div>
+            </div>
+        </div>
+
+        <div class="stack-card" style="--index: 6;">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="card-number">06</div>
+                    <span class="card-category">Specialty Materials</span>
+                    <h3>Non-Metals</h3>
+                    <p>Industrial Nylon, Fiber, and Rubber components for specialized insulation, gears, and bushings.</p>
+                    
+                    <div class="card-specs">
+                        <div class="spec">
+                            <span class="label">Material</span>
+                            <span class="value">Nylon, Fiber</span>
+                        </div>
+                        <div class="spec">
+                            <span class="label">Durability</span>
+                            <span class="value">High Wear</span>
+                        </div>
+                    </div>
+
+                    <div class="card-tags">
+                        <span>Cast Nylon</span>
+                        <span>Rubber</span>
+                    </div>
+                </div>
+                <div class="card-visual">🛡️</div>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Industries Section -->
+        <section id="industries-blade-section">
+    <div class="blade-header">
+        <h2 class="section-title">Core Industries</h2>
+        <p>Powering global infrastructure with certified ferro alloys.</p>
+    </div>
+
+    <div class="blade-container">
+        <div class="blade-item active"> <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1974&auto=format&fit=crop" alt="Automotive manufacturing" class="blade-bg">
+            <div class="blade-overlay"></div>
             
-            <!-- Card 1: Mild Steel -->
-            <div class="product-card card-1">
-                <div class="product-content">
-                    <div class="product-number">01</div>
-                    <span class="product-category">Structural Steel</span>
-                    <h3 class="product-title">Mild Steel (MS)</h3>
-                    <p class="product-description">
-                        High-quality mild steel products perfect for construction, fabrication, and general engineering applications. Known for excellent weldability and formability.
-                    </p>
-                    <div class="product-specs">
-                        <div class="spec-item">
-                            <div class="spec-label">Carbon Content</div>
-                            <div class="spec-value">0.15-0.25%</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Applications</div>
-                            <div class="spec-value">Construction</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Finish</div>
-                            <div class="spec-value">Hot/Cold Rolled</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Forms</div>
-                            <div class="spec-value">Plates, Sheets, Bars</div>
-                        </div>
-                    </div>
-                    <div class="grade-pills">
-                        <span class="grade-pill">IS 2062</span>
-                        <span class="grade-pill">ASTM A36</span>
-                        <span class="grade-pill">EN 10025</span>
-                    </div>
+            <div class="blade-content">
+                <div class="blade-closed-title">
+                    <span>AUTOMOTIVE</span>
+                    <i class="blade-icon">🚗</i>
                 </div>
-                <div class="product-visual">
-                    <div class="product-icon">🏗️</div>
-                    <div class="visual-overlay"></div>
+                <div class="blade-open-details">
+                    <h3>Automotive Sector</h3>
+                    <p>Providing lightweight, high-tensile ferro alloys essential for next-generation engine components and chassis safety.</p>
+                    <a href="#contact" class="blade-link">View auto specs &rarr;</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 2: Die & Tool Steel -->
-            <div class="product-card card-2">
-                <div class="product-content">
-                    <div class="product-number">02</div>
-                    <span class="product-category">Precision Engineering</span>
-                    <h3 class="product-title">Die & Tool Steel</h3>
-                    <p class="product-description">
-                        Premium grade tool steels designed for high-stress applications. Exceptional hardness, wear resistance, and dimensional stability for precision tooling.
-                    </p>
-                    <div class="product-specs">
-                        <div class="spec-item">
-                            <div class="spec-label">Hardness Range</div>
-                            <div class="spec-value">58-65 HRC</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Applications</div>
-                            <div class="spec-value">Dies, Molds, Tools</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Temperature</div>
-                            <div class="spec-value">Up to 600°C</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Treatment</div>
-                            <div class="spec-value">Heat Treatable</div>
-                        </div>
-                    </div>
-                    <div class="grade-pills">
-                        <span class="grade-pill">D2</span>
-                        <span class="grade-pill">D3</span>
-                        <span class="grade-pill">H11</span>
-                        <span class="grade-pill">H13</span>
-                    </div>
+        <div class="blade-item">
+            <img src="https://images.unsplash.com/photo-1541888946425-d03df1329279?q=80&w=2070&auto=format&fit=crop" alt="Construction site cranes" class="blade-bg">
+            <div class="blade-overlay"></div>
+
+            <div class="blade-content">
+                <div class="blade-closed-title">
+                    <span>CONSTRUCTION</span>
+                    <i class="blade-icon">🏗️</i>
                 </div>
-                <div class="product-visual">
-                    <div class="product-icon">🔧</div>
-                    <div class="visual-overlay"></div>
+                <div class="blade-open-details">
+                    <h3>Infrastructure & Construction</h3>
+                    <p>The backbone of mega-projects. Our steel offers superior load-bearing capacity and corrosion resistance for skyscrapers and bridges.</p>
+                    <a href="#contact" class="blade-link">View structural grades &rarr;</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 3: Case Hardening Alloy -->
-            <div class="product-card card-3">
-                <div class="product-content">
-                    <div class="product-number">03</div>
-                    <span class="product-category">Surface Treatment</span>
-                    <h3 class="product-title">Case Hardening Alloy</h3>
-                    <p class="product-description">
-                        Specialized alloys for carburizing and nitriding processes. Ideal for components requiring hard wear-resistant surfaces with tough, ductile cores.
-                    </p>
-                    <div class="product-specs">
-                        <div class="spec-item">
-                            <div class="spec-label">Core Hardness</div>
-                            <div class="spec-value">30-40 HRC</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Case Depth</div>
-                            <div class="spec-value">0.5-2.0mm</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Applications</div>
-                            <div class="spec-value">Gears, Shafts</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Process</div>
-                            <div class="spec-value">Carburizing</div>
-                        </div>
-                    </div>
-                    <div class="grade-pills">
-                        <span class="grade-pill">EN8</span>
-                        <span class="grade-pill">EN353</span>
-                        <span class="grade-pill">SAE8620</span>
-                        <span class="grade-pill">16MnCr5</span>
-                    </div>
+        <div class="blade-item">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop" alt="Power plant energy" class="blade-bg">
+            <div class="blade-overlay"></div>
+
+            <div class="blade-content">
+                <div class="blade-closed-title">
+                    <span>ENERGY & POWER</span>
+                    <i class="blade-icon">⚡</i>
                 </div>
-                <div class="product-visual">
-                    <div class="product-icon">⚙️</div>
-                    <div class="visual-overlay"></div>
+                <div class="blade-open-details">
+                    <h3>Energy Sector</h3>
+                    <p>Engineered for extreme environments. Reliable alloys for thermal power plants, hydroelectric dams, and renewable grids.</p>
+                    <a href="#contact" class="blade-link">View energy solutions &rarr;</a>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 4: Alloy Steels -->
-            <div class="product-card card-4">
-                <div class="product-content">
-                    <div class="product-number">04</div>
-                    <span class="product-category">High Performance</span>
-                    <h3 class="product-title">Alloy Steels</h3>
-                    <p class="product-description">
-                        Premium alloy steels with superior mechanical properties. Enhanced strength, toughness, and resistance to wear and fatigue for critical applications.
-                    </p>
-                    <div class="product-specs">
-                        <div class="spec-item">
-                            <div class="spec-label">Tensile Strength</div>
-                            <div class="spec-value">850-1200 MPa</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Applications</div>
-                            <div class="spec-value">Automotive, Heavy</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Alloying Elements</div>
-                            <div class="spec-value">Cr, Ni, Mo</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Treatment</div>
-                            <div class="spec-value">Q&T Available</div>
-                        </div>
-                    </div>
-                    <div class="grade-pills">
-                        <span class="grade-pill">EN19</span>
-                        <span class="grade-pill">EN24</span>
-                        <span class="grade-pill">EN31</span>
-                        <span class="grade-pill">42CrMo4</span>
-                    </div>
+        <div class="blade-item">
+            <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=1935&auto=format&fit=crop" alt="Railway tracks" class="blade-bg">
+            <div class="blade-overlay"></div>
+
+            <div class="blade-content">
+                <div class="blade-closed-title">
+                    <span>RAILWAYS</span>
+                    <i class="blade-icon">🚂</i>
                 </div>
-                <div class="product-visual">
-                    <div class="product-icon">🚗</div>
-                    <div class="visual-overlay"></div>
+                <div class="blade-open-details">
+                    <h3>Railway Networks</h3>
+                    <p>Certified suppliers for critical railway infrastructure, including track materials, wagon components, and locomotive parts.</p>
+                    <a href="#contact" class="blade-link">View railway specs &rarr;</a>
                 </div>
             </div>
-
-            <!-- Card 5: Carbon Steel -->
-            <div class="product-card card-5">
-                <div class="product-content">
-                    <div class="product-number">05</div>
-                    <span class="product-category">General Purpose</span>
-                    <h3 class="product-title">Carbon Steel</h3>
-                    <p class="product-description">
-                        Versatile carbon steel grades for diverse industrial applications. Available in low, medium, and high carbon variants to suit specific requirements.
-                    </p>
-                    <div class="product-specs">
-                        <div class="spec-item">
-                            <div class="spec-label">Carbon Range</div>
-                            <div class="spec-value">0.05-1.5%</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Applications</div>
-                            <div class="spec-value">Multi-Industry</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Forms Available</div>
-                            <div class="spec-value">All Profiles</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Standards</div>
-                            <div class="spec-value">IS, ASTM, DIN</div>
-                        </div>
-                    </div>
-                    <div class="grade-pills">
-                        <span class="grade-pill">1018</span>
-                        <span class="grade-pill">1045</span>
-                        <span class="grade-pill">1095</span>
-                        <span class="grade-pill">C45</span>
-                    </div>
-                </div>
-                <div class="product-visual">
-                    <div class="product-icon">⚡</div>
-                    <div class="visual-overlay"></div>
-                </div>
-            </div>
-
         </div>
     </div>
-
-    <!-- CTA Section -->
-    <div style="max-width:
+</section>
         
-        <!-- Why Choose Us Section -->
-        <section id="why-choose-us" class="section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title fade-in">Why Choose Parasmani Ferro Industries</h2>
-                <p class="text-center fade-in">We don't just supply steel; we build lasting partnerships with integrity, quality, and reliability at our core.</p>
-                
-                <div class="diagonal-grid">
-                    <div class="diagonal-item fade-in" style="--delay: 0.1s">
-                        <div class="diagonal-icon">💰</div>
-                        <h3>Competitive Pricing</h3>
-                        <p>Best value with market-leading prices</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.2s">
-                        <div class="diagonal-icon">✓</div>
-                        <h3>Quality Assurance</h3>
-                        <p>Rigorous quality checks on every product</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.3s">
-                        <div class="diagonal-icon">🏆</div>
-                        <h3>Extensive Experience</h3>
-                        <p>Years of industry expertise you can trust</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.4s">
-                        <div class="diagonal-icon">⏰</div>
-                        <h3>On-Time Delivery</h3>
-                        <p>Timely delivery to keep projects on track</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.5s">
-                        <div class="diagonal-icon">👥</div>
-                        <h3>Customer Support</h3>
-                        <p>Dedicated team with expert advice</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.6s">
-                        <div class="diagonal-icon">📦</div>
-                        <h3>Wide Product Range</h3>
-                        <p>Comprehensive range for all steel needs</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.7s">
-                        <div class="diagonal-icon">📏</div>
-                        <h3>Custom Sizes</h3>
-                        <p>Products tailored to your requirements</p>
-                    </div>
-                    
-                    <div class="diagonal-item fade-in" style="--delay: 0.8s">
-                        <div class="diagonal-icon">🤝</div>
-                        <h3>Trusted Partner</h3>
-                        <p>Long-term relationships built on reliability</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Industries Section -->
-        <section id="industries" class="section-padding">
-            <div class="container">
-                <h2 class="section-title fade-in">Industries We Serve</h2>
-                <p class="text-center fade-in">Our high-quality steel products power diverse industries across India and beyond</p>
-                
-                <div class="honeycomb-grid">
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🏗️</div>
-                                    <h4>Construction</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🚗</div>
-                                    <h4>Automotive</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">⚙️</div>
-                                    <h4>Manufacturing</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">⚓</div>
-                                    <h4>Marine</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">⚡</div>
-                                    <h4>Energy</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🛢️</div>
-                                    <h4>Oil & Gas</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🚂</div>
-                                    <h4>Railways</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🌉</div>
-                                    <h4>Infrastructure</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🚛</div>
-                                    <h4>Transport</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🌾</div>
-                                    <h4>Agriculture</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🛒</div>
-                                    <h4>FMCG</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hexagon-item fade-in">
-                        <div class="hexagon">
-                            <div class="hexagon-inner">
-                                <div class="hex-content">
-                                    <div class="hex-icon">🔧</div>
-                                    <h4>Engineering</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <!-- Testimonials Section (Load from component) -->
         <div id="testimonials-root"></div>
@@ -777,9 +620,10 @@ We don't just supply steel; we build solid partnerships and contribute to respon
     
     <!-- Component Loader -->
     <script src="js/component-loader.js"></script>
-    <script src="js/products.js"></script>
+
     <script src="intro.js"></script>
     <script src="testimonials.js"></script>   
+    <script src="js/industries.js"></script>
     <script src="script.js"></script>
     
 </body>

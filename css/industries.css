@@ -1,0 +1,222 @@
+/* industries.css */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --blade-height: 600px; /* Adjust height of the section */
+    --theme-dark: #0a0a0a;
+    --theme-accent: #ff3333; /* A striking industrial red/orange */
+    --text-light: #ffffff;
+    --transition-speed: 0.7s;
+    --transition-ease: cubic-bezier(0.25, 1, 0.5, 1); /* High-end smooth easing */
+}
+
+#industries-blade-section {
+    background: var(--theme-dark);
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.blade-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-light);
+    padding: 0 20px;
+}
+
+.blade-header .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* --- THE MECHANISM CONTAINER --- */
+.blade-container {
+    display: flex;
+    height: var(--blade-height);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 2px; /* Tiny gap for a mechanical feel */
+}
+
+/* --- INDIVIDUAL BLADE ITEM --- */
+.blade-item {
+    position: relative;
+    /* The magic: everyone starts with flex 1 */
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex var(--transition-speed) var(--transition-ease);
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.blade-item:last-child {
+    border-right: none;
+}
+
+/* BACKGROUND IMAGES & OVERLAYS */
+.blade-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Zoom effect on hover */
+    transition: transform var(--transition-speed) var(--transition-ease), filter var(--transition-speed) ease;
+    filter: grayscale(80%) brightness(0.5); /* Start muted */
+}
+
+.blade-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,0.95));
+    z-index: 1;
+}
+
+/* CONTENT CONTAINER */
+.blade-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    color: var(--text-light);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* CLOSED STATE STYLES (Rotated Text) */
+.blade-closed-title {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    /* Rotate text 90 degrees to fit in narrow pillar */
+    transform: translateX(-50%) rotate(-90deg);
+    white-space: nowrap;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 1;
+    transition: opacity 0.4s ease 0.3s; /* Delay fade out */
+}
+
+.blade-icon {
+    font-style: normal;
+    /* Counter-rotate icon so it's upright */
+    transform: rotate(90deg); 
+    font-size: 1.2rem;
+}
+
+/* OPEN STATE STYLES (Hidden initially) */
+.blade-open-details {
+    opacity: 0;
+    transform: translateY(30px); /* Slide up effect */
+    transition: all 0.5s ease;
+    max-width: 450px;
+}
+
+.blade-open-details h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    color: var(--theme-accent);
+}
+
+.blade-open-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255,255,255,0.8);
+}
+
+.blade-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--theme-accent);
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+.blade-link:hover {
+    color: var(--theme-accent);
+}
+
+
+/* --- THE INTERACTION STATES (Hover & Active Class) --- */
+
+/* When hovering over the container, dim non-hovered items */
+.blade-container:hover .blade-item:not(:hover) {
+     /* Optional: make others smaller */
+    /* flex: 0.7; */
+}
+
+/* The Active State (Triggered by hover OR JS class '.active') */
+.blade-item:hover,
+.blade-item.active {
+    /* Grow the active item significantly */
+    flex: 5; 
+}
+
+/* Styles inside the active item */
+.blade-item:hover .blade-bg,
+.blade-item.active .blade-bg {
+    transform: scale(1.1); /* Slow zoom */
+    filter: grayscale(0%) brightness(0.8); /* Bring back color */
+}
+
+.blade-item:hover .blade-closed-title,
+.blade-item.active .blade-closed-title {
+    opacity: 0; /* Hide rotated Title */
+    transition-delay: 0s;
+}
+
+.blade-item:hover .blade-open-details,
+.blade-item.active .blade-open-details {
+    opacity: 1; /* Show details */
+    transform: translateY(0);
+    transition-delay: 0.3s; /* Delay showing until expanded */
+}
+
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .blade-container {
+        flex-direction: column; /* Stack vertically on mobile */
+        height: auto;
+    }
+    .blade-item {
+        height: 100px; /* Collapsed height */
+        flex: none; /* Disable flex growing on mobile axis */
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        transition: height var(--transition-speed) var(--transition-ease);
+    }
+    
+    .blade-closed-title {
+        transform: none; /* No rotation on mobile */
+        bottom: auto;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .blade-item.active {
+        height: 500px; /* Expanded height on mobile */
+        flex: none;
+    }
+    .blade-item:hover {
+       flex: none; /* Disable hover flex on mobile */
+    }
+}
